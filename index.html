@@ -24,7 +24,7 @@
         h1, h2 {
             color: #00CE5D;
         }
-        input[type="text"], textarea {
+        textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -61,13 +61,6 @@
             padding: 15px 30px;
             font-size: 18px;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -102,10 +95,25 @@
                 return;
             }
 
+            // Generar ideas mejoradas y enlaces creativos
+            const ideasGancho = [
+                "¿Sabías que cada pequeño paso cuenta para lograr algo grande?",
+                "Todos tenemos una historia que merece ser contada. ¿Cuál es la tuya?",
+                "A veces, la inspiración viene de los momentos más inesperados..."
+            ];
+            const ideasCierre = [
+                "Comparte tu experiencia en los comentarios. ¡Nos encantará leerte!",
+                "Etiqueta a alguien que necesite escuchar este mensaje hoy.",
+                "¿Qué opinas? Deja tu respuesta y hablemos más sobre esto."
+            ];
+
+            const ganchoMejorado = ideasGancho[Math.floor(Math.random() * ideasGancho.length)];
+            const cierreMejorado = ideasCierre[Math.floor(Math.random() * ideasCierre.length)];
+
             const postContent = `
-                <strong>${gancho}</strong><br><br>
-                ${cuerpo}<br><br>
-                <em>${cierre}</em>
+                <strong>${ganchoMejorado}</strong><br><br>
+                ${cuerpo} Esto me recuerda que todos podemos conectar a través de nuestras experiencias.<br><br>
+                <em>${cierreMejorado}</em>
             `;
 
             document.getElementById("postContent").innerHTML = postContent;
