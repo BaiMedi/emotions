@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramienta Interactiva: Diseña tu Publicación Emocional</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #00CE5D;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #00CE5D;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #00a948;
+        }
+        .result {
+            background: #e6f9ec;
+            padding: 15px;
+            border: 1px solid #b8e5c2;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta button {
+            background-color: #00CE5D;
+            padding: 15px 30px;
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Herramienta Interactiva: Diseña tu Publicación Emocional</h1>
+        <p>¡Crea una publicación emocional que conecte con tu audiencia! Completa cada sección para estructurar tu publicación:</p>
+        <h2>Gancho inicial</h2>
+        <textarea id="gancho" rows="3" placeholder="Escribe una pregunta o frase que despierte emociones..."></textarea>
+        <h2>Cuerpo</h2>
+        <textarea id="cuerpo" rows="5" placeholder="Comparte una historia o anécdota que conecte con la audiencia..."></textarea>
+        <h2>Cierre</h2>
+        <textarea id="cierre" rows="3" placeholder="Incluye una llamada a la acción que motive la interacción..."></textarea>
+        <button onclick="generatePost()">Generar Publicación</button>
+        <div id="output" class="result" style="display: none;">
+            <h2>Tu Publicación Emocional:</h2>
+            <p id="postContent"></p>
+        </div>
+        <div class="cta">
+            <h2>¿CAMPO DE JUEGO O MINA DE ORO?</h2>
+            <button onclick="location.href='https://klicana.work/ykEi0H';">UNIRME A MISIÓN GESTOR REDES SOCIALES</button>
+        </div>
+    </div>
+
+    <script>
+        function generatePost() {
+            const gancho = document.getElementById("gancho").value;
+            const cuerpo = document.getElementById("cuerpo").value;
+            const cierre = document.getElementById("cierre").value;
+
+            if (gancho.trim() === "" || cuerpo.trim() === "" || cierre.trim() === "") {
+                alert("Por favor, completa todos los campos para generar tu publicación.");
+                return;
+            }
+
+            const postContent = `
+                <strong>${gancho}</strong><br><br>
+                ${cuerpo}<br><br>
+                <em>${cierre}</em>
+            `;
+
+            document.getElementById("postContent").innerHTML = postContent;
+            document.getElementById("output").style.display = "block";
+        }
+    </script>
+</body>
+</html>
